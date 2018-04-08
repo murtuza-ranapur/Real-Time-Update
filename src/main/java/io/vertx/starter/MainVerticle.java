@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
+import io.vertx.ext.web.handler.StaticHandler;
 
 public class MainVerticle extends AbstractVerticle {
 
@@ -29,7 +30,8 @@ public class MainVerticle extends AbstractVerticle {
     HttpServer httpServer = vertx.createHttpServer();
 
     Router router = Router.router(vertx);
-    router.get("/").handler(this::doNothing);
+    router.get("/app/*").handler(StaticHandler.create().setCachingEnabled(false));
+    router.get("/").handler(context -> context.reroute("/app/index.html"));
     router.get("/getString").handler(this::getStringHandler);
     router.post().handler(BodyHandler.create());
     router.post("/update").handler(this::updateString);
