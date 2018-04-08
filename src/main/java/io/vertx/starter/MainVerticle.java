@@ -5,10 +5,13 @@ import io.vertx.core.Future;
 import io.vertx.core.http.HttpClient;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
+import io.vertx.ext.web.handler.sockjs.BridgeOptions;
+import io.vertx.ext.web.handler.sockjs.SockJSHandler;
 
 public class MainVerticle extends AbstractVerticle {
 
@@ -35,6 +38,14 @@ public class MainVerticle extends AbstractVerticle {
     router.get("/getString").handler(this::getStringHandler);
     router.post().handler(BodyHandler.create());
     router.post("/update").handler(this::updateString);
+
+
+    SockJSHandler sockJSHandler = SockJSHandler.create(vertx);
+    BridgeOptions bridgeOptions = new BridgeOptions()
+      .addInboundPermitted(new PermittedOptions().setAddress("app.markdown"))
+      .addOutboundPermitted(new PermittedOptions().setAddress("page.saved"));
+    sockJSHandler.bridge(bridgeOptions);
+    router.route("/eventbus/*").handler(sockJSHandler);
 
     httpServer
       .requestHandler(router::accept)
