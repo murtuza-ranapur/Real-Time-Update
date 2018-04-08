@@ -29,23 +29,17 @@
   $(document).ready(function(){
 
     var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");
-
-
     console.log(eb);
+    alert(EventBus.OPEN);
+    eb.send("app.markdown", "HELLO!", function(err, reply){
+      if(err == null) {
+        console.log(reply);
+      }
+      else {
+        console.log("error");
+      }
 
-    eb.onopen = function () {
-      console.log("open");
-       eb.send("app.markdown", "HELLO!", function(err, reply){
-        if(err == null) {
-          console.log(reply);
-        }
-        else {
-          console.log("error");
-        }
-      });
-    };
-
-
+    });
     console.log(eb);
 
   });

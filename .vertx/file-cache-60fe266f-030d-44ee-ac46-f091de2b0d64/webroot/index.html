@@ -31,18 +31,19 @@
     var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");
 
 
-    console.log(eb);
+   console.log(eb);
+
 
     eb.onopen = function () {
-      console.log("open");
-       eb.send("app.markdown", "HELLO!", function(err, reply){
-        if(err == null) {
-          console.log(reply);
-        }
-        else {
-          console.log("error");
-        }
-      });
+    console.log("open");
+     eb.send("app.markdown", "HELLO!", function(err, reply){
+      if(err == null) {
+        console.log(reply);
+      }
+      else {
+        console.log("error");
+      }
+    });
     };
 
 

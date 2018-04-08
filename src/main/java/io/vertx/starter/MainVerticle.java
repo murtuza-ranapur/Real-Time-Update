@@ -13,6 +13,8 @@ import io.vertx.ext.web.handler.StaticHandler;
 import io.vertx.ext.web.handler.sockjs.BridgeOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
 
+import javax.annotation.processing.Processor;
+
 public class MainVerticle extends AbstractVerticle {
 
   private String userString;
@@ -46,6 +48,11 @@ public class MainVerticle extends AbstractVerticle {
       .addOutboundPermitted(new PermittedOptions().setAddress("page.saved"));
     sockJSHandler.bridge(bridgeOptions);
     router.route("/eventbus/*").handler(sockJSHandler);
+
+    vertx.eventBus().<String>consumer("app.markdown", msg -> {
+      System.out.println(msg.body());
+      msg.reply(msg.body());
+    });
 
     httpServer
       .requestHandler(router::accept)

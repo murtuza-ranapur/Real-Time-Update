@@ -28,21 +28,24 @@
 <script>
   $(document).ready(function(){
 
-    var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");
+    <!--var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");-->
 
 
+    var eb = new vertx.EventBus(
+      window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/eventbus');
     console.log(eb);
 
+
     eb.onopen = function () {
-      console.log("open");
-       eb.send("app.markdown", "HELLO!", function(err, reply){
-        if(err == null) {
-          console.log(reply);
-        }
-        else {
-          console.log("error");
-        }
-      });
+    console.log("open");
+     eb.send("app.markdown", "HELLO!", function(err, reply){
+      if(err == null) {
+        console.log(reply);
+      }
+      else {
+        console.log("error");
+      }
+    });
     };
 
 

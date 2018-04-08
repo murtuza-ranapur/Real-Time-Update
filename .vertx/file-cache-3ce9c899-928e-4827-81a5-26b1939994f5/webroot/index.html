@@ -29,24 +29,15 @@
   $(document).ready(function(){
 
     var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");
+    eb.send("app.markdown", "HELLO!", function(err, reply){
+      if(err == null) {
+        console.log(reply);
+      }
+      else {
+        console.log("error");
+      }
 
-
-    console.log(eb);
-
-    eb.onopen = function () {
-      console.log("open");
-       eb.send("app.markdown", "HELLO!", function(err, reply){
-        if(err == null) {
-          console.log(reply);
-        }
-        else {
-          console.log("error");
-        }
-      });
-    };
-
-
-    console.log(eb);
+    });
 
   });
 </script>
