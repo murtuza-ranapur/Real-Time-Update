@@ -15,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainVerticle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainVerticle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="187">
+              <caret line="11" column="84" lean-forward="false" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -85,8 +85,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/io/vertx/starter/MainVerticleTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/webroot/index.html" />
       </list>
     </option>
   </component>
@@ -386,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523165453802</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added jquery and bootstrap dependencies">
+      <created>1523167096303</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523167096303</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -427,7 +434,8 @@
     <MESSAGE value="Adding new dependencies" />
     <MESSAGE value="Adding apis to get and update string" />
     <MESSAGE value="Adding index.html." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding index.html." />
+    <MESSAGE value="Added jquery and bootstrap dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added jquery and bootstrap dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -476,14 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/vertx/starter/MainVerticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -491,6 +491,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webroot/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="84" lean-forward="false" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
