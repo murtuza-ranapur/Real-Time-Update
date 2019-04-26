@@ -17,7 +17,7 @@ import javax.annotation.processing.Processor;
 
 public class MainVerticle extends AbstractVerticle {
 
-  private String userString;
+  private String userString = "";
 
   @Override
   public void start(Future<Void> startFuture) {
@@ -51,6 +51,8 @@ public class MainVerticle extends AbstractVerticle {
 
     vertx.eventBus().<String>consumer("app.markdown", msg -> {
       System.out.println(msg.body());
+      userString = msg.body();
+      vertx.eventBus().publish("page.saved", userString);
       msg.reply(msg.body());
     });
 
